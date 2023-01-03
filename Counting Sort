@@ -1,0 +1,24 @@
+class Solution{
+    public:
+    //Function to arrange all letters of a string in lexicographical 
+    //order using Counting Sort.
+    string countSort(string arr){
+        // code here
+        int count[26] = {0};
+        
+        for(int i=0; i<arr.size(); i++)
+        {
+            int temp = (int) arr[i]-97;
+            count[temp]++;
+        }
+        string ans="";
+        for(int i=0; i<26; i++)
+        {
+            for(int j=0; j<count[i]; j++)
+            {
+                ans += (char) i+97;
+            }
+        }
+        return ans;
+    }
+};
