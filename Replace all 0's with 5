@@ -1,0 +1,22 @@
+class Solution{
+  public:
+    int convertFive(int n)
+    {
+        int ans = 0;
+        int factor =1;
+        
+        if(n==0)
+            return 5;
+        while(n>0){
+            if(n%10==0){
+                ans += factor * 5;
+            }
+            else{
+                ans += factor * (n%10);
+            }
+            n=n/10;
+            factor = factor * 10;
+        }
+        return ans;
+    }
+};
